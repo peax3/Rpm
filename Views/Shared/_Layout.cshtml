@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Paroo</title>
+    <link rel="stylesheet" href="/assets/css/drift-basic.min.css">
+    <link rel="stylesheet" href="/assets/css/photoswipe.css">
+    <link rel="stylesheet" href="/assets/css/font-icon.min.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/reset.css">
+    <link rel="stylesheet" href="/assets/css/defined.css">
+    <link rel="stylesheet" href="/assets/css/base.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/home-default.css">
+    <link rel="stylesheet" href="/lib/neon/css/fontawesome-free/css/all.min.css">
+    @RenderSection("Styles", required: false)
+    <link rel="stylesheet" href="/css/site.css">
+</head>
+<body class="header_full_true kalles-template css_scrollbar lazy_icons btnt4_style_2 zoom_tp_2 css_scrollbar template-index kalles_toolbar_true hover_img2 swatch_style_rounded swatch_list_size_small label_style_rounded wrapper_full_width header_full_true header_sticky_true hide_scrolld_true des_header_3 h_banner_true top_bar_true prs_bordered_grid_1 search_pos_canvas lazyload">
+    <div id="nt_wrapper">
+
+        <header id="ntheader" class="ntheader header_3 h_icon_iccl ">
+        </header>
+
+        <div id="nt_content">
+            @RenderBody()
+        </div>
+
+        <footer id="nt_footer" class="bgbl footer-1">
+            @Html.Partial("footer/_BottomNav")
+            <div id="kalles-section-footer_bot" class="kalles-section footer__bot">
+                <div class="footer__bot_wrap pt__20 pb__20">
+                    <div class="container pr tc">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-12 col-12 col_1">
+                                Copyright © 2021
+                                <span class="cp">Kalles</span> all rights reserved. Powered by <a href="https://themes.the4.co/kalles-html">The4</a>
+                            </div>
+                            <div class="col-lg-6 col-md-12 col-12 col_2">
+                                <ul id="footer-menu" class="clearfix">
+                                    <li class="menu-item">
+                                        <a href="shop-filter-options.html">Shop</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="about-us.html">About Us</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="contact-us.html">Contact</a>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a href="blog-grid.html">Blog</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <div id="kalles-section-sticky_atc" class="kalles-section"></div>
+
+
+    <!-- back to top button-->
+    <a id="nt_backtop" class="pf br__50 z__100 des_bt1" href="#">
+        <span class="tc br__50 db cw"><i class="pr pegk pe-7s-angle-up"></i></span>
+    </a>
+    <script src="/assets/js/jquery-3.5.1.min.js"></script>
+    <script src="/assets/js/jarallax.min.js"></script>
+    <script src="/assets/js/packery.pkgd.min.js"></script>
+    <script src="/assets/js/jquery.hoverIntent.min.js"></script>
+    <script src="/assets/js/magnific-popup.min.js"></script>
+    <script src="/assets/js/flickity.pkgd.min.js"></script>
+    <script src="/assets/js/lazysizes.min.js"></script>
+    <script src="/assets/js/js-cookie.min.js"></script>
+    <script src="/assets/js/jquery.countdown.min.js"></script>
+    <script src="/assets/js/photoswipe.min.js"></script>
+    <script src="/assets/js/photoswipe-ui-default.min.js"></script>
+    <script src="~/assets/js/drift.min.js"></script>
+    <script src="/assets/js/isotope.pkgd.min.js"></script>
+    <script src="/assets/js/resize-sensor.min.js"></script>
+     <script src="/assets/js/popper.min.js"></script>
+     <script src="/assets/js/bootstrap.min.js"></script>
+    <script src="/assets/js/theia-sticky-sidebar.min.js"></script>
+    <script src="/lib/neon/css/fontawesome-free/js/all.min.js"></script>
+    <script src="/lib/moment.min.js"></script>
+    <script src="~/js/lib/vendor_app.js"></script>
+    <script src="~/js/lib/nav.js"></script>
+    @RenderSection("Scripts", required: false)
+    <script src="/assets/js/interface.js"></script>
+    <script src="/assets/js/paroo.js"></script>
+</body>
+</html>

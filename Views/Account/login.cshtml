@@ -1,0 +1,36 @@
+@{
+	Layout = "_Layout";
+	ViewData["Title"] = "Login";
+}
+
+
+
+
+<section id="cover" class="min-vh-100">
+    <div id="cover-caption">
+        <div class="container">
+            <div class="row text-white">
+                <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center form p-4">
+                    <h1 class="display-4 py-2 text-truncate">Center my form.</h1>
+                    <div class="px-2" asp-route-returnurl="@ViewData["ReturnUrl"]">
+                        <form method="post">
+                            <div asp-validation-summary="All" class="text-danger"></div>
+                            <div class="form-group col-md-12">
+                                <label for="-Email">Email</label>
+                                <input type="text" name="Email" class="form-control" id="-Email">
+                            </div>
+                            <div class="form-group col-md-12">
+                                <label for="-Password">Password</label>
+                                <input type="password" name="Password" class="form-control" id="-Password">
+                            </div>
+                            <div class="reg-ef">
+                            <span>Dont have an account? <a href="/account/register">register</a></span>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Login in</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

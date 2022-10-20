@@ -1,0 +1,24 @@
+﻿@{
+    Layout = "_Layout";
+    ViewData["Title"] = "Confirm Email";
+}
+
+@using Paroo.Models
+@using Newtonsoft.Json
+
+@model RegisterViewModel
+@{ 
+    var user = JsonConvert.DeserializeObject<RegisterViewModel>((string)TempData["user"]);
+}
+
+
+<h3 style="color:#2c5702 !important;" class="uk-text-center">Email confirmation</h3>
+<p class="uk-text-center">
+    Dear @user.Username
+</p>
+<p class="uk-text-center">
+    Please check your email <strong>@user.Email</strong> for a confirmation link.
+</p>
+<p class="uk-text-center">
+    <a href="@Url.Content("~/")">Home</a>
+</p>

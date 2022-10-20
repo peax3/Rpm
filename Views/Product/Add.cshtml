@@ -1,0 +1,13 @@
+﻿@using Paroo.Entities.UserAggregate
+@{
+    var profile = (Profile)ViewData["profile"];
+}
+@Html.AntiForgeryToken()
+<div id="start"></div>
+
+<script>
+    var currentUser = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(profile));
+</script>
+@section Scripts{
+    <script src="~/js/lib/home.js" asp-append-version="true"></script>
+}

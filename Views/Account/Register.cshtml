@@ -1,0 +1,74 @@
+﻿@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+
+<section id="cover" class="min-vh-100">
+    <div id="cover-caption">
+        <div class="container">
+            <div class="row text-white">
+                <div class="col-xl-5 col-lg-6 col-md-8 col-sm-10 mx-auto text-center form p-4">
+                    <h1 class="display-4 py-2 text-truncate">Center my form.</h1>
+                    <div class="px-2">
+                        <form method="post">
+                            <div asp-validation-summary="All" class="text-danger"></div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="-Email">Email</label>
+                                    <input type="text" name="Email" class="form-control" id="-Email">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="-Username">Username</label>
+                                    <input type="text" name="Username" class="form-control" id="-Username">
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="-Password">Password</label>
+                                    <input type="password" name="password" class="form-control" id="-Password">
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="-ConfirmPassword">Confirm Password</label>
+                                    <input type="password" name="ConfirmPassword" class="form-control" id="-ConfirmPassword">
+                                </div>
+                            </div>
+                           <div class="g-recaptcha" data-sitekey="@Configuration["Captcha:ClientKey"]" data-callback="correctCaptcha"></div>
+                           <div class="reg-ef">
+                            <span>Already have an account? <a href="/account/login">sigin in</a></span>
+                            </div>
+                            <button id="form-submit-btn" type="submit" class="btn btn-primary" disabled>Sign in</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+@section Scripts {
+
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+
+    <script>
+        var defaultRangeValidator = $.validator.methods.range;
+        $.validator.methods.range = function (value, element, param) {
+            if (element.type === 'checkbox') {
+                return element.checked;
+            } else {
+                return defaultRangeValidator.call(this, value, element, param);
+            }
+        }
+
+        function correctCaptcha() {
+            document.getElementById("form-submit-btn").disabled= false;
+        }
+    </script>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+}

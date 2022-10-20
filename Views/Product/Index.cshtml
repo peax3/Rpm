@@ -1,0 +1,27 @@
+﻿@using Paroo.Entities.UserAggregate
+@using Paroo.Entities.OrderAggregate
+@{
+    ViewData["Title"] = "Home Page";
+}
+@Html.AntiForgeryToken()
+@section Styles
+{
+    <link rel="stylesheet" href="/assets/css/single-masonry-theme.css">
+    <link rel="stylesheet" href="/assets/css/single-product.css">
+}
+@{
+    var profile = (Profile)ViewData["profile"];
+    var product = (ProductQuery)ViewData["product"];
+    var order = (Order)ViewData["order"];
+}
+<div id="start"></div>
+
+<script>
+    var currentUser = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(profile));
+    var product = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(product));
+    var order = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(order));
+</script>
+@section Scripts{
+    
+    <script src="~/js/lib/home.js" asp-append-version="true"></script>
+}

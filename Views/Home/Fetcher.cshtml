@@ -1,0 +1,23 @@
+﻿@using Paroo.Entities
+@using Paroo.Models
+@{
+    ViewData["Title"] = "Home Page";
+}
+@Html.AntiForgeryToken()
+@section Styles
+{
+    <link rel="stylesheet" href="/assets/css/single-masonry-theme.css">
+    <link rel="stylesheet" href="/assets/css/single-product.css">
+}
+@{
+    var product = (QueryResult<ProductQuery>) ViewData["product"];
+}
+<div id="start"></div>
+
+<script>
+    var product = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(product));
+</script>
+@section Scripts{
+    
+    <script src="~/js/lib/home.js" asp-append-version="true"></script>
+}

@@ -1,0 +1,166 @@
+
+
+#cover label {
+    text-align: left;
+    color: black;
+}
+
+
+@media (min-width: 768px) {
+    .type_newsletter .nt_bg_overlay {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -ms-flex-align: center;
+        align-items: center;
+    }
+}
+
+.kalles-decor__newsletter {
+    background-color: #f2f2f4;
+}
+
+.kalles-decor__newsletter {
+    margin: 50px auto;
+    padding: 70px 0;
+}
+
+.simCuB {
+    background-color: var(--main-color);
+    border: none;
+    color: #fff;
+    text-transform: uppercase;
+    position: relative;
+}
+
+.qkShp p {
+    margin-bottom: -11px;
+}
+
+.qkShp{
+    cursor:pointer;
+}
+
+.mrkA {
+    border: 2px solid green;
+}
+
+.bidClsTy {
+    margin-bottom: 2px;
+    color: red;
+}
+
+._Uzep_ .media-heading {
+    margin: 0;
+    font-size: 14px;
+}
+
+._Uzep_ p{
+    margin-bottom:0;
+}
+
+.xFcoy_ {
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    /* padding: 10px; */
+    margin-right: 10px;
+}
+
+#js_u2_1 {
+    margin-top: 0;
+    margin-left: 19px;
+}
+
+.mgr_ {
+    margin-right: 8px !important;
+}
+
+
+.sp-st {
+    padding: 8px;
+    font-size: 10px;
+    text-align: right;
+    cursor:pointer;
+}
+
+._uP98xF button{
+    float: right;
+    margin-top: 20px;
+}
+
+.hrdivider {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.lagus {
+    border: 2px dotted lightgrey;
+    padding: 10px;
+    min-height: 3px;
+}
+
+.cvhs tr, td {
+    border-collapse: collapse;
+    border: none;
+}
+
+.cvhs .table td, .table th {
+    border-top: none;
+    border-left: none;
+}
+
+.cvhs table, th, td {
+    border: none;
+}
+
+.hosi{
+    text-align:right;
+}
+
+.repGrd {
+    margin-top:18px;
+}
+.repGrd hr {
+    margin: 5px;
+}
+
+.swapa {
+    margin-right: 20px;
+    margin-top: 14px;
+}
+
+.cv_Ui8 p{
+    margin-bottom:2px;
+}
+
+.cvghte {
+    cursor:pointer;
+}
+
+.cvghte:hover{
+    text-decoration:underline;
+}
+
+.reg-ef {
+    text-align: left;
+    color: black;
+    margin-left: 16px;
+    margin-bottom: 10px;
+}
+
+.cjvZAQ h5{
+    margin:0;
+}
+
+.cjvZAQ p {
+    margin: 0;
+}
+
+.cjvZAQ .card-footer{
+    text-align:right;
+}
