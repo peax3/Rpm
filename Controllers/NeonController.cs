@@ -8,7 +8,6 @@ using Paroo.Entities.CategoryAggregate;
 using Paroo.Entities.DispatchAggregate;
 using Paroo.Entities.ProductAggregate;
 using Paroo.Exceptions;
-using Paroo.Migrations;
 using Paroo.Models.Neon;
 using Paroo.Services.ParooServices.interfaces;
 using System;

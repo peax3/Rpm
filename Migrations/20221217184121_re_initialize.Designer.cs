@@ -10,8 +10,8 @@ using Paroo;
 namespace Paroo.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20220321172624_CategoryIdPro")]
-    partial class CategoryIdPro
+    [Migration("20221217184121_re_initialize")]
+    partial class re_initialize
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -277,6 +277,30 @@ namespace Paroo.Migrations
                     b.HasIndex("CategoryId");
 
                     b.ToTable("category_prices");
+                });
+
+            modelBuilder.Entity("Paroo.Entities.DispatchAggregate.Dispatcher", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .UseIdentityColumn();
+
+                    b.Property<Guid>("AssignedBy")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("Created")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("dispatchers");
                 });
 
             modelBuilder.Entity("Paroo.Entities.MediaAggregate.Media", b =>

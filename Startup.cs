@@ -24,6 +24,7 @@ using Paroo.Services.ParooServices.interfaces;
 using Paroo.Services.ParooServices;
 using Paroo.Settings;
 using Paroo.Models;
+using Microsoft.AspNetCore.SpaServices.ReactDevelopmentServer;
 
 namespace Paroo
 {
@@ -43,8 +44,9 @@ namespace Paroo
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews().AddNewtonsoftJson(options =>
-    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
-);
+                options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+            );
+
             //if (_env.IsProduction())
             services.AddDbContext<DataContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
@@ -97,9 +99,6 @@ namespace Paroo
             container.Populate(services);
             container.RegisterModule(new ApplicationModule(Configuration.GetConnectionString("DefaultConnection")));
 
-
-            
-
             return new AutofacServiceProvider(container.Build());
         }
 
@@ -140,7 +139,19 @@ namespace Paroo
                 endpoints.MapControllerRoute(
                     name: "Categories", "{cat}", defaults: new { controller = "Home", action = "Fetcher", cat = "" });
             });
+
+            app.UseSpa(spa =>
+            {
+                spa.Options.SourcePath = "wwwroot";
+
+                if (env.IsDevelopment())
+                {
+                    spa.UseReactDevelopmentServer(npmScript: "develop");
+                }
+            });
+
             app.UseMiddleware<ExceptionHandlingMiddleware>();
+
         }
     }
 }
