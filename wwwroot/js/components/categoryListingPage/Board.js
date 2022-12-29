@@ -89,11 +89,11 @@ const Board = (props) => {
         } = response;
 
         setData((data) => ({
-            ...data,
-            products: [...products, ...results],
-            page: pageNumber,
-            count: totalNumberOfItems,
-          }));
+          ...data,
+          products: [...products, ...results],
+          page: pageNumber,
+          count: totalNumberOfItems,
+        }));
       },
       failure: function(response) {
         console.log(response);
@@ -152,50 +152,50 @@ const Board = (props) => {
   const filterProduct = (e) => {
     e.preventDefault();
     $.ajax({
-        type: "GET",
-        headers: {
-          RequestVerificationToken: xrf,
-        },
-        url: "/home/FetchProducts",
-        data: {
-          catId: catId,
-          page: 1,
-          size: size,
-          count: 0,
-          maximum: maximum,
-          minimum: minimum,
-          stateId: stateId,
-        },
-        beforeSend: function(xhr) {
-          xhr.setRequestHeader("XSRF-TOKEN", xrf);
-        },
-        "content-type": "application/json",
-        success: function(response) {
-          const {
-            totalNumberOfPages,
-            totalNumberOfItems,
-            pageNumber,
-            pageSize,
-            results,
-          } = response;
-  
-          setData((data) => ({
-            ...data,
-            products: [...results],
-            page: pageNumber,
-            count: totalNumberOfItems,
-          }));
-        },
-        failure: function(response) {
-          console.log(response);
-        },
-      });
+      type: "GET",
+      headers: {
+        RequestVerificationToken: xrf,
+      },
+      url: "/home/FetchProducts",
+      data: {
+        catId: catId,
+        page: 1,
+        size: size,
+        count: 0,
+        maximum: maximum,
+        minimum: minimum,
+        stateId: stateId,
+      },
+      beforeSend: function(xhr) {
+        xhr.setRequestHeader("XSRF-TOKEN", xrf);
+      },
+      "content-type": "application/json",
+      success: function(response) {
+        const {
+          totalNumberOfPages,
+          totalNumberOfItems,
+          pageNumber,
+          pageSize,
+          results,
+        } = response;
+
+        setData((data) => ({
+          ...data,
+          products: [...results],
+          page: pageNumber,
+          count: totalNumberOfItems,
+        }));
+      },
+      failure: function(response) {
+        console.log(response);
+      },
+    });
   };
 
   return (
     <>
       {/* mask overlay */}
-      <div class="mask-overlay ntpf t__0 r__0 l__0 b__0 op__0 pe_none"></div>
+      <div className="mask-overlay ntpf t__0 r__0 l__0 b__0 op__0 pe_none"></div>
       {/* end mask overlay */}
       {quickView && <QuickView />}
       {quickBid && (
@@ -211,15 +211,17 @@ const Board = (props) => {
               title={title.toUpperCase()}
               subTitle={`Products in ${title} category`}
             />
-            {count != products.length && <>
-            <br/>
-            <div style={{textAlign:"center"}}>
-            <button className="btn btn-light btn-lg" onClick={loadProducts}>
-              Load more
-            </button>
-            </div>
-            <br/>
-            </>}
+            {count != products.length && (
+              <>
+                <br />
+                <div style={{ textAlign: "center" }}>
+                  <button className="btn btn-light btn-lg" onClick={loadProducts}>
+                    Load more
+                  </button>
+                </div>
+                <br />
+              </>
+            )}
           </div>
           <div className="col-2">
             <br />
@@ -263,16 +265,16 @@ const Board = (props) => {
                   >
                     <option value={0}>Select state</option>
                     {states.map((x, i) => {
-                      return <option value={x.id}>{x.name}</option>;
+                      return (
+                        <option key={i} value={x.id}>
+                          {x.name}
+                        </option>
+                      );
                     })}
                   </select>
                 </div>
               </div>
-              <button
-                type="submit"
-                className="btn btn-primary"
-                onClick={filterProduct}
-              >
+              <button type="submit" className="btn btn-primary" onClick={filterProduct}>
                 Filter
               </button>
             </form>

@@ -33,7 +33,6 @@ namespace Paroo.Controllers
             _productService = productService ?? throw new ArgumentNullException(nameof(productService));
         }
 
-
         public async Task<ActionResult> Fetcher(string cat)
         {
             HashSet<string> defaults = new HashSet<string> { "kids", "women", "men" };
@@ -54,7 +53,6 @@ namespace Paroo.Controllers
             return Ok(products);
         }
 
-
         public async Task<IActionResult> Index()
         {
             if (!User.Identity.IsAuthenticated) return View();
@@ -73,7 +71,6 @@ namespace Paroo.Controllers
             ViewData["cats"] = cats;
             return View();
         }
-
 
         [Authorize]
         [Route("account")]

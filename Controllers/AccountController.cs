@@ -166,16 +166,13 @@ namespace Paroo.Controllers
             }
             return View(model);
         }
-
-
-       
+   
         [HttpGet]
         [AllowAnonymous]
         public IActionResult Login()
         {
             return View();
         }
-
 
         [HttpPost]
         [AllowAnonymous]
@@ -204,7 +201,6 @@ namespace Paroo.Controllers
                     }
                 }
                 ModelState.AddModelError(string.Empty, "Invalid login attempt.");
-
             }
             else
             {
@@ -215,11 +211,9 @@ namespace Paroo.Controllers
                 }
             }
 
-
             // If we got this far, something failed, redisplay form
             return View(model);
         }
-
 
         [AllowAnonymous]
         public async Task<IActionResult> Logout()
@@ -235,7 +229,6 @@ namespace Paroo.Controllers
         {
             return View();
         }
-
 
         [HttpPost("account/update_profile")]
         public async Task<IActionResult> UpdateProfile(Profile model)
@@ -256,8 +249,6 @@ namespace Paroo.Controllers
             var item = await _profileService.UpdateProfile(model, part);
             return Ok(item);
         }
-
-
 
         [HttpGet("account/verify-email")]
         [AllowAnonymous]

@@ -185,9 +185,7 @@ const Home = (props) => {
           trenPag: productPagination,
         }));
 
-        dispatch(
-          setHomeTrending({ trending: products, trenPag: productPagination })
-        );
+        dispatch(setHomeTrending({ trending: products, trenPag: productPagination }));
       },
       failure: function(response) {
         console.log(response);
@@ -205,7 +203,7 @@ const Home = (props) => {
 
   return (
     <>
-      <div className="modal fade" tabindex="-1" role="dialog" id="myModal">
+      <div className="modal fade" tabIndex="-1" role="dialog" id="myModal">
         <div className="modal-dialog modal-dialog-centered" role="document">
           <div className="modal-content">
             <div className="modal-header">
@@ -215,8 +213,7 @@ const Home = (props) => {
             </div>
             <div className="modal-body">
               <p>
-                Please update your profile{" "}
-                <a href="/account/update-profile">here</a>
+                Please update your profile <a href="/account/update-profile">here</a>
               </p>
             </div>
           </div>
@@ -233,7 +230,7 @@ const Home = (props) => {
       <NewsLetter />
       <Search />
       {/* mask overlay */}
-      <div class="mask-overlay ntpf t__0 r__0 l__0 b__0 op__0 pe_none"></div>
+      <div className="mask-overlay ntpf t__0 r__0 l__0 b__0 op__0 pe_none"></div>
       {/* end mask overlay */}
       {quickView && <QuickView />}
       {quickBid && (

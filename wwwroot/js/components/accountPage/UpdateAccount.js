@@ -1,3 +1,4 @@
+import moment from "moment";
 import React, { Component, useState, useEffect, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 
@@ -10,7 +11,7 @@ const Account = (props) => {
     FirstName: "",
     LastName: "",
     PhoneNumber: "",
-    DateOfBirth: null,
+    DateOfBirth: "",
     Address: "",
     stateId: 0,
     provinceId: 0,
@@ -32,9 +33,9 @@ const Account = (props) => {
     provinces,
   } = data;
 
-  useEffect(()=>{
+  useEffect(() => {
     FetchStates();
-  }, [])
+  }, []);
 
   const handleFormChange = (e) => {
     e.persist();
@@ -72,7 +73,7 @@ const Account = (props) => {
     });
   };
 
-  const validateForm =()=>{
+  const validateForm = () => {
     var errors = [];
     if (checkEmpty(FirstName)) {
       errors.push("First Name is required");
@@ -96,7 +97,7 @@ const Account = (props) => {
     }
 
     return errors;
-  }
+  };
 
   useEffect(() => {
     var errors = validateForm();
@@ -112,7 +113,6 @@ const Account = (props) => {
         disableSubmit: false,
       }));
     }
-
   }, [FirstName, LastName, DateOfBirth, Address, stateId, PhoneNumber]);
 
   useEffect(() => {
@@ -132,7 +132,7 @@ const Account = (props) => {
       console.log(stateId);
       var stateIndex = states.findIndex((c) => c.id == stateId);
       var curSt = states[stateIndex];
-      if(curSt.allowed == false){
+      if (curSt.allowed == false) {
         alert("We are not fully operational in this state!");
       }
       var provinceList = states[stateIndex].provinces;
@@ -145,7 +145,7 @@ const Account = (props) => {
 
   const submitForm = (e) => {
     var errors = validateForm();
-    if(errors.length > 0){
+    if (errors.length > 0) {
       var msg = "";
       for (const m of errors) {
         msg += m + "\n";
@@ -197,10 +197,7 @@ const Account = (props) => {
                 <h1 className="display-4 py-2">Update profile</h1>
                 <div className="px-2">
                   <form method="post">
-                    <div
-                      asp-validation-summary="All"
-                      className="text-danger"
-                    ></div>
+                    <div asp-validation-summary="All" className="text-danger"></div>
                     <div className="form-row">
                       <div className="form-group col-md-6">
                         <label htmlFor="-FirstName">First Name</label>
@@ -269,7 +266,7 @@ const Account = (props) => {
                     </div>
                     <div className="form-row">
                       <div className="form-group col-md-6">
-                        <label for="address_country_ship_2">State</label>
+                        <label htmlFor="address_country_ship_2">State</label>
                         <select
                           id="address_country_ship_2"
                           name="stateId"
@@ -277,12 +274,16 @@ const Account = (props) => {
                         >
                           <option value="0">---</option>
                           {states.map((x, i) => {
-                            return <option value={x.id}>{x.name}</option>;
+                            return (
+                              <option value={x.id} key={x.id}>
+                                {x.name}
+                              </option>
+                            );
                           })}
                         </select>
                       </div>
                       <div className="form-group col-md-6">
-                        <label for="address_country_ship_2">Province</label>
+                        <label htmlFor="address_country_ship_2">Province</label>
                         <select
                           id="address_country_ship_2"
                           name="provinceId"
@@ -290,7 +291,11 @@ const Account = (props) => {
                         >
                           <option value="0">---</option>
                           {provinces.map((x, i) => {
-                            return <option value={x.id}>{x.name}</option>;
+                            return (
+                              <option value={x.id} key={x.id}>
+                                {x.name}
+                              </option>
+                            );
                           })}
                         </select>
                       </div>

@@ -46,7 +46,6 @@ namespace Paroo.Controllers
             return View();
         }
 
-
         //Every single request that has to do with users
         //are grouped here
         #region Users
@@ -58,14 +57,12 @@ namespace Paroo.Controllers
         }
         #endregion
 
-
         #region Categories
         public async Task<IActionResult> FetchCategories(int count, int pageSize, int page)
         {
             var data = await _categoryService.FetchCategories(count, pageSize, page);
             return Ok(data);
         }
-
 
         public async Task<IActionResult> FetchAllCat()
         {
@@ -79,13 +76,11 @@ namespace Paroo.Controllers
             return Ok(cats);
         }
 
-
         public IActionResult FetchCategoryPrices(int pid)
         {
             var cats = _context.category_prices.Where(c => c.CategoryId == pid).ToList();
             return Ok(cats);
         }
-
 
         //Todo: move to service layer later
         [HttpPost]

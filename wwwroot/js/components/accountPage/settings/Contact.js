@@ -1,6 +1,7 @@
 import React, { Component, useState, useEffect, useRef } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { navigate } from "hookrouter";
+import moment from "moment";
 
 const Contact = (props) => {
   const dispatch = useDispatch();
@@ -243,7 +244,11 @@ const Contact = (props) => {
                 >
                   <option value="0">---</option>
                   {states.map((x, i) => {
-                    return <option value={x.id} selected={x.id==stateId}>{x.name}</option>;
+                    return (
+                      <option value={x.id} key={x.id} selected={x.id == stateId}>
+                        {x.name}
+                      </option>
+                    );
                   })}
                 </select>
               </div>
@@ -256,7 +261,11 @@ const Contact = (props) => {
                 >
                   <option value="0">---</option>
                   {provinces.map((x, i) => {
-                    return <option value={x.id} selected={x.id==provinceId}>{x.name}</option>;
+                    return (
+                      <option value={x.id} selected={x.id == provinceId}>
+                        {x.name}
+                      </option>
+                    );
                   })}
                 </select>
               </div>

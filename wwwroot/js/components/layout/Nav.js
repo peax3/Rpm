@@ -54,10 +54,7 @@ const Nav = (props) => {
                 </div>
                 <div className="col dn db_lg">
                   <nav className="nt_navigation kl_navigation tc hover_side_up nav_arrow_false">
-                    <ul
-                      id="nt_menu_id"
-                      className="nt_menu in_flex wrap al_center"
-                    >
+                    <ul id="nt_menu_id" className="nt_menu in_flex wrap al_center">
                       <li className="type_dropdown menu-item has-children menu_has_offsets menu_right pos_right">
                         <a className="lh__1 flex al_center pr" href="/kids">
                           Kids
@@ -89,27 +86,21 @@ const Nav = (props) => {
                         </a>
                       </li>
                       <li className="type_dropdown menu-item has-children menu_has_offsets menu_right pos_right">
-                        <a
-                          className="lh__1 flex al_center pr"
-                          href="/contact-us"
-                        >
+                        <a className="lh__1 flex al_center pr" href="/contact-us">
                           Contact Us
                         </a>
                       </li>
                       {window.currentUser && (
                         <li className="type_dropdown menu-item has-children menu_has_offsets menu_right pos_right">
-                          <a
-                            className="lh__1 flex al_center pr"
-                            href="/account/"
-                          >
+                          <a className="lh__1 flex al_center pr" href="/account/">
                             Account
                           </a>
-                          <div class="sub-menu calc_pos">
-                            <div class="lazy_menu lazyloaded">
-                              <div class="menu-item">
+                          <div className="sub-menu calc_pos">
+                            <div className="lazy_menu lazyloaded">
+                              <div className="menu-item">
                                 <a href="/account/settings/">Settings</a>
                               </div>
-                              <div class="menu-item">
+                              <div className="menu-item">
                                 <a href="/account/logout">Logout</a>
                               </div>
                             </div>
@@ -140,16 +131,11 @@ const Nav = (props) => {
                       href="/wishlist"
                     >
                       <i className="iccl iccl-heart pr">
-                        <span className="op__0 ts_op pa tcount bgb br__50 cw tc">
-                          3
-                        </span>
+                        <span className="op__0 ts_op pa tcount bgb br__50 cw tc">3</span>
                       </i>
                     </a>
                     <div className="icon_cart pr">
-                      <a
-                        className="push_side position-relative cb chp db"
-                        href="/cart"
-                      >
+                      <a className="push_side position-relative cb chp db" href="/cart">
                         <i className="iccl iccl-cart pr">
                           <span className="op__0 ts_op pa tcount bgb br__50 cw tc">
                             5

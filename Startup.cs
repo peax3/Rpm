@@ -140,15 +140,15 @@ namespace Paroo
                     name: "Categories", "{cat}", defaults: new { controller = "Home", action = "Fetcher", cat = "" });
             });
 
-            app.UseSpa(spa =>
-            {
-                spa.Options.SourcePath = "wwwroot";
+            //app.UseSpa(spa =>
+            //{
+            //    spa.Options.SourcePath = "wwwroot";
 
-                if (env.IsDevelopment())
-                {
-                    spa.UseReactDevelopmentServer(npmScript: "develop");
-                }
-            });
+            //    if (env.IsDevelopment())
+            //    {
+            //        spa.UseReactDevelopmentServer(npmScript: "develop");
+            //    }
+            //});
 
             app.UseMiddleware<ExceptionHandlingMiddleware>();
 

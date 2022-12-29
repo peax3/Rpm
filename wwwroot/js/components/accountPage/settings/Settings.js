@@ -6,7 +6,6 @@ import Password from "./Password";
 import Phone from "./Phone";
 import { navigate } from "hookrouter";
 
-
 const Settings = (props) => {
   const dispatch = useDispatch();
   const { profile } = useSelector((state) => state.account);
@@ -46,18 +45,21 @@ const Settings = (props) => {
       <div className="container">
         <div className="row">
           <div className="col-3">
-            <div class="card" style={{ width: "18rem" }}>
-            
-              <div class="card-header">
-                <i class="las la-angle-left" style={{cursor:"pointer"}} onClick={()=> navigate("/account/")}></i>
+            <div className="card" style={{ width: "18rem" }}>
+              <div className="card-header">
+                <i
+                  className="las la-angle-left"
+                  style={{ cursor: "pointer" }}
+                  onClick={() => navigate("/account/")}
+                ></i>
                 Settings
               </div>
-              <ul class="list-group list-group-flush">
+              <ul className="list-group list-group-flush">
                 <a
                   href="#"
                   onClick={navi}
                   data-id="contact"
-                  class="list-group-item list-group-item-action"
+                  className="list-group-item list-group-item-action"
                 >
                   Personal details
                 </a>
@@ -65,7 +67,7 @@ const Settings = (props) => {
                   href="#"
                   onClick={navi}
                   data-id="phone"
-                  class="list-group-item list-group-item-action"
+                  className="list-group-item list-group-item-action"
                 >
                   Add phone number
                 </a>
@@ -73,7 +75,7 @@ const Settings = (props) => {
                   href="#"
                   onClick={navi}
                   data-id="confirm"
-                  class="list-group-item list-group-item-action"
+                  className="list-group-item list-group-item-action"
                 >
                   Confirm email
                 </a>
@@ -81,18 +83,21 @@ const Settings = (props) => {
                   href="#"
                   onClick={navi}
                   data-id="password"
-                  class="list-group-item list-group-item-action"
+                  className="list-group-item list-group-item-action"
                 >
                   Change password
                 </a>
-                <a href="/account/logout" class="list-group-item list-group-item-action">
+                <a
+                  href="/account/logout"
+                  className="list-group-item list-group-item-action"
+                >
                   Log out
                 </a>
               </ul>
             </div>
           </div>
           <div className="col-9">
-            <div class="card">{showViews()}</div>
+            <div className="card">{showViews()}</div>
           </div>
         </div>
       </div>
